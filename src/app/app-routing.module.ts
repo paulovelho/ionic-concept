@@ -9,8 +9,12 @@ const routes: Routes = [
   },
   {
     path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  }
+    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule )
+  },
+  {
+    path: 'parts',
+    loadChildren: () => import('./features/parts/part.module').then( m => m.PartsModule )
+  },
 ];
 
 @NgModule({

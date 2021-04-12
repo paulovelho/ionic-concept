@@ -1,0 +1,14 @@
+<ion-grid class="ion-margin">
+	<ion-row class="title">
+		<ion-col size="4" class="col-serial">S.No</ion-col>
+		<ion-col size="4" class="col-name">Name</ion-col>
+		<ion-col size="2" class="col-type">Type</ion-col>
+		<ion-col size="2" class="col-price">Price</ion-col>
+	</ion-row>
+	<ion-row *ngFor="let part of data; index as i">
+		<ion-col size="4" class="col-serial">{{ part.serial }}</ion-col>
+		<ion-col size="4" class="col-name">{{ part.name }}</ion-col>
+		<ion-col size="2" class="col-type">{{ part.type }}</ion-col>
+		<ion-col size="2" class="col-price">{{ part.price }}</ion-col>
+	</ion-row>
+</ion-grid>
