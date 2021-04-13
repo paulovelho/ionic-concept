@@ -1,0 +1,22 @@
+<div id="order-form">
+	<form>
+		<section>
+			<header>Parts</header>
+				<ion-item>
+					<ion-label>Part name</ion-label>
+					<ion-input type="text" [(ngModel)]="order.part" name="part"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label>Value</ion-label>
+					<app-currency-input></app-currency-input>
+				</ion-item>
+		</section>
+
+		<section>
+			<header>Confirm and Send</header>
+			<ion-button color="danger" expand="block">
+				Send Order</ion-button>
+		</section>
+	</form>
+
+</div>

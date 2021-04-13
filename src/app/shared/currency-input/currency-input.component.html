@@ -1,0 +1,10 @@
+<div class="input-group"> 
+	<div class="input-group-prepend">
+		<span class="input-group-text">{{ symbol }}</span>
+	</div>
+	<input 
+		[id]="id"
+		[ngModel]="amount" 
+		(ngModelChange)="updateChanges()"
+		class="form-control" />
+</div>
