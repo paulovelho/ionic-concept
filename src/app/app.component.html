@@ -1,20 +1,54 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>AAR</ion-list-header>
-          <ion-note>vokal@aar.com</ion-note>
+	<ion-split-pane contentId="main-content">
+		<ion-menu contentId="main-content" type="overlay">
+			<ion-content>
+				<ion-list id="inbox-list">
+					<ion-list-header>AAR</ion-list-header>
+					<ion-note>vokal@aar.com</ion-note>
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
-  </ion-split-pane>
+					<ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+						<ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+							<ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+							<ion-label>{{ p.title }}</ion-label>
+						</ion-item>
+					</ion-menu-toggle>
+				</ion-list>
+
+				<ion-list id="theme-menu">
+					<ion-item lines="none">
+						<ion-icon slot="start" [ios]="'bulb-outline'" [md]="'bulb-sharp'"></ion-icon>
+						<ion-label>LIGHT/DARK</ion-label>
+						<ion-toggle (ionChange)="pressLightSwitch($event)" [checked]="darkMode" slot="end"></ion-toggle>
+					</ion-item>
+				</ion-list>
+
+				<ion-list id="app-menu">
+					<ion-menu-toggle auto-hide="false" *ngFor="let p of myAppPages; let i = index">
+						<ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+							<ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+							<ion-label>{{ p.title }}</ion-label>
+						</ion-item>
+					</ion-menu-toggle>
+				</ion-list>
+
+				<ion-list id="app-logout">
+					<ion-item text-center class="user">
+						<ion-label>Nicolas Cage</ion-label>
+					</ion-item>
+					<ion-button class="logout">
+						LOGOUT
+						<ion-icon slot="end" [ios]="'power-outline'" [md]="'power-sharp'"></ion-icon>
+					</ion-button>
+				</ion-list>
+				<ion-list id="app-version">
+					<ion-item text-center class="version">
+						<ion-label>Version 0.0.1</ion-label>
+					</ion-item>
+				</ion-list>
+
+
+			</ion-content>
+		</ion-menu>
+		<ion-router-outlet id="main-content"></ion-router-outlet>
+	</ion-split-pane>
 </ion-app>
