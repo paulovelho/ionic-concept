@@ -131,6 +131,9 @@ ion-item.selected {
   .user {
     text-align: center;
     width: 100%;
+    .item-inner {
+      --inner-border-width: 0;
+    }
   }
 
   .logout {

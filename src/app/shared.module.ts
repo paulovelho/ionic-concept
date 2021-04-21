@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // components
 import { CurrencyInputComponent } from '@app/shared/currency-input/currency-input.component';
 
-
 @NgModule({
 	imports: [
 		CommonModule,

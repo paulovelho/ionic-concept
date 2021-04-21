@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Store } from '@app/services/store/store.service';
+
 @Component({
 	selector: 'app-root',
 	templateUrl: 'app.component.html',
@@ -7,33 +9,35 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	public appPages = [
-		{ title: 'HOME (Parts Search)', url: '/parts', icon: 'home' },
-		{ title: 'CUSTOMER BACKLOG', url: '/orders', icon: 'ticket' },
+		{ title: 'HOME (Parts Search)', url: '/home', icon: 'home' },
+		{ title: 'CUSTOMER BACKLOG', url: '/parts', icon: 'ticket' },
 		{ title: 'APPROVALS', url: '/orders', icon: 'checkmark' },
 	];
 
 	public myAppPages = [
-		{ title: 'FEEDBACK', url: '/parts', icon: 'chatbubble' },
-		{ title: 'WHAT\'S NEW', url: '/orders', icon: 'sparkles' },
+		{ title: 'FEEDBACK', url: '#', icon: 'chatbubble' },
+		{ title: 'WHAT\'S NEW', url: '#', icon: 'sparkles' },
 	];
 
 	public darkMode: boolean;
 
 	constructor(
+		private Store: Store,
 	) {
 		this.Initialize();
 	}
 
 	private async Initialize() {
-		this.changeLights(true);
+		this.changeLights(this.Store.isDark());
 		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 		prefersDark.addListener((setting) => this.changeLights(setting.matches));
 	}
 
 	private changeLights(dark: boolean){
-		console.info("setting lights to ", dark);
 		this.darkMode = dark;
+		this.Store.set("dark-mode", dark);
 		document.body.classList.toggle('dark', dark);
+		document.body.classList.toggle('light', !dark);
 	}
 	public pressLightSwitch(event) {
 		this.changeLights(event.detail.checked);
