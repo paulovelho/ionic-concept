@@ -1,0 +1,57 @@
+
+ion-title {
+	text-align: center;
+	margin-left: -50px;
+	.logo {
+		margin-top: 5px;
+	}
+}
+
+ion-list#links-list {
+
+	ion-item {
+		height: 148px !important;
+		ion-label {
+			font-weight: bold;
+			text-align: right;
+			margin-top: 100px;
+			padding: 15px;
+			height: 48px;
+			width: 100%;
+			background-color: rgba(0, 0, 0, .5);
+			border-right: 5px solid var(--ion-color-primary);
+			--color: #EEE;
+			ion-icon {
+				transition: margin 700ms;
+			}
+
+		}
+		margin-bottom: 15px;
+		.bg {
+			background-position: left top !important;
+			height: 148px;
+			width: 100%;
+		}
+
+		&:hover {
+			ion-label {
+				border-right: 10px solid var(--ion-color-primary);
+				ion-icon {
+					margin-right: 200px;
+				}
+			}
+		}
+
+	}
+	#home-parts-search .bg {
+		background: url('/assets/images/item-img1.png') no-repeat 100% 100%;
+	}
+	#home-customer-backlog .bg {
+		background: url('/assets/images/item-img2.png') no-repeat 100% 100%;
+	}
+	#home-approvals .bg {
+		background: url('/assets/images/item-img3.png') no-repeat 100% 100%;
+	}
+}
+
+

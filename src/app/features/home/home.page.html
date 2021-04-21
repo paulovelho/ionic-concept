@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+    	<img src="assets/{{logo}}.svg" class="logo logo-home" />
+    </ion-title>
+    <ion-buttons slot="end">
+    	&nbsp;
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-list id="links-list" lines="none">
+		<ion-item id="home-parts-search">
+			<div class="bg">
+				<ion-label>
+					PARTS SEARCH
+					<ion-icon slot="end" [ios]="'chevron-forward-outline'" [md]="'chevron-forward-sharp'"></ion-icon>
+				</ion-label>
+			</div>
+		</ion-item>
+
+		<ion-item id="home-customer-backlog">
+			<div class="bg">
+				<ion-label>
+					CUSTOMER BACKLOG
+					<ion-icon slot="end" [ios]="'chevron-forward-outline'" [md]="'chevron-forward-sharp'"></ion-icon>
+				</ion-label>
+			</div>
+		</ion-item>
+
+		<ion-item id="home-approvals">
+			<div class="bg">
+				<ion-label>
+					APPROVALS
+					<ion-icon slot="end" [ios]="'chevron-forward-outline'" [md]="'chevron-forward-sharp'"></ion-icon>
+				</ion-label>
+			</div>
+		</ion-item>
+
+
+	</ion-list>
+
+</ion-content>
